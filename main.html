@@ -1,29 +1,49 @@
 <!DOCTYPE html>
-
+<html lang="en">   
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>PokéDex</title>
+</head>
 <body>
-    <header>
+    <div id="outer">
+        <header>
+            <h1>
+                PokéDex Client
+            </h1>
+        </header>
 
-    </header>
-
-    <body>
-        <div id="outer">
-            <header>
-                <h1>
-                    PokéDex Client
-                </h1>
-            </header>
-
-            <nav>
-                <div id="search_bar">
-                    <input type="text" placeholder="Search..">
+        <nav>
+            <div id="search_bar">
+                <input type="text" placeholder="Pokemon Name">
+                <button id="search">Submit</button>
+            </div>
+        </nav>
+        <main>
+            <div class="images_group">
+                <div class="image_container">
+                    <div id="poke_container" class="poke-container"></div>
+                     <!-- <img src="https://picsum.photos/300/200?random=1231"> -->
                 </div>
-            </nav>
-            <main>
 
-            </main>
-            <footer>
-                Copyright © David's PokéDex with PokeAPI 2022
-            </footer>
-        </div>
-    </body>
+                <div class="image_container">
+                    <div id="poke_container"></div>
+                    <!-- <img src="https://picsum.photos/300/200?random=1212331">  -->
+                </div>
+
+                <div class="image_container">
+                    <div id="poke_container"></div>
+                    <!-- <img src="https://picsum.photos/300/200?random=112123125231"> -->
+                </div>
+            </div>
+
+        </main>
+        <footer>
+            Copyright © David's PokéDex with PokeAPI 2022
+        </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
+</html>

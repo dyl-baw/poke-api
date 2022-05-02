@@ -1,0 +1,27 @@
+body {
+    margin: 0px;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+}
+
+body {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+}
+
+.image_container {
+    float: left;
+    /* display: grid;
+    grid-template-rows: auto; */
+}
+
+header,
+footer {
+    color: red;
+    text-align: center;
+}
