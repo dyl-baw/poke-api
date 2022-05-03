@@ -7,11 +7,11 @@ function processPokeResp(pokemon) {
     //console.log(pokemon);
     const upperCaseName = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
     add_poke += `
-    <div class="image_container">
-    ${upperCaseName} 
+    <div class="pokemon_images">
     <a href="/profile/${pokemon.id}">
     <img src="${pokemon.sprites.other["official-artwork"].front_default}">
     </a>
+    ${upperCaseName} 
     </div>`
 }
 

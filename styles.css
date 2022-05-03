@@ -5,7 +5,7 @@
 
         nav {
 
-            background-color: #333;
+            background-color: red;
             /* overflow: hidden; */
             display: flex;
             justify-content: space-between;
@@ -73,18 +73,37 @@
             gap: 10px;
         }
 
-        .image_container {
-            justify-content: center;
+        .pokemon_images {
+            text-align: center;
+            background-color:  #eee;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 20px;
+        }
+
+        .pokemon_images img {
+            margin-top: 20px;
+            max-width: 90%;
+        }
+
+        #dummy_div{
+            display: flex;
         }
 
         @media screen and (max-width: 550px) {
             main, nav, #dummy_div{
+                display: flex;
                 flex-direction: column;
             }
         }
 
         h1 {
             margin: 0px;
+        }
+
+        .pokemon_images {
+            display: flex;
+            flex-direction: column;
         }
 
         footer,
@@ -100,8 +119,6 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        #dummy_div{
-            display: flex;
-        }
+        
         
     
