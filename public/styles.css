@@ -70,9 +70,15 @@
             border-radius: 20px;
         }
 
-        .pokemon_images img {
-            border-radius: 5px;
+        .pokemon_container img {
+            margin-top:  20px;
             width: 90%;
+        }
+
+        .pokemon_images {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
         }
 
         #dummy_div{
