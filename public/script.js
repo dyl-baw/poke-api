@@ -17,9 +17,17 @@ const cardColors = {
     normal: '#F5F5F5'
 };
 
+const main_types = Object.keys(cardColors);
+
 function processPokeResp(pokemon) {
     const upperCaseName = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
-    add_poke += `<div class="pokemon_container"><a href="/profile/${pokemon.id}"><img src="${pokemon.sprites.other["official-artwork"].front_default}"> </a>${upperCaseName} </div>`
+    const pokemon_types = pokemon.types.map(type => type.type.name);
+    const type = main_types.find(type => pokemon_types.indexOf(type) > -1);
+    const colour = cardColors[type];
+    add_poke += `<div class="pokemon_container"><a href="/profile/${pokemon.id}"><img src="${pokemon.sprites.other["official-artwork"].front_default}"> <div> </a>${upperCaseName} </div> </div>`
+    $(".pokemon_container").css("background-color", colour);
+    console.log(colour);
+    // pokemon_container.style.backgroundColor = color;
 }
 
 async function ninePokemons() {

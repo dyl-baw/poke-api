@@ -1,21 +1,17 @@
 type_g = "";
 storage = "";
 
-function processPokemonResp2(resp) {
-    console.log(resp);
-    $("main").append("<p>" +resp.name + "</p>")
-    $("main").append(`<img src="${resp.sprites.other["official-artwork"].front_default}">`)
+function processPokemonResp2(data) {
+    $("main").append(`<div class="card"><img src="${data.sprites.other["official-artwork"].front_default}"> ${data.name} </div>`)
 }
 
-function processPokemonResp(resp) {
-    for (i = 0; i < resp.pokemon.length; i++)
+function processPokemonResp(data) {
+    for (i = 0; i < data.pokemon.length; i++)
         $.ajax({
             type: "get",
-            url: resp.pokemon[i].pokemon.url,
+            url: data.pokemon[i].pokemon.url,
             success: processPokemonResp2
         })
-
-    
 }
 
 function processPokeRegion(data) {
@@ -32,6 +28,35 @@ function processPokeRegion(data) {
     }
 }
 
+function searchPokemon() {
+    searchInput = $("#pokemonName").val().toLowerCase()
+    console.log(searchOnePokemon);
+    $.ajax({
+        type:"GET",
+        url:`https://pokeapi.co/api/v2/pokemon/${searchInput}`,
+        success: searchOnePokemon
+    })
+    $("main").empty()
+}
+
+function searchOnePokemon(data) {
+    $("main").append(`
+        <div class="card">
+            <div> ${data.id}</div>
+            <img src="${data.sprites.other["official-artwork"].front_default}">
+        </div>
+    `)
+    getHistory(data);
+}
+
+function getHistory(data) {
+    $('#history').append(`
+            <div>
+                <a href="../profile/${data.id}">${data.name}</a>
+            </div>
+            `)
+}
+
 function getID(url) {
     return url.split(`pokemon/`)[1].split(`/`)[0]
 }
@@ -40,7 +65,6 @@ function display(type_) {
     // how to grab "type" of pokemon
     $("main").empty()
     type_g = type_
-
     $.ajax({
         type: "get",
         url: `https://pokeapi.co/api/v2/type/${type_}`,
@@ -97,6 +121,10 @@ function setup() {
                 console.log('This shouldnt happen')
                 break
         }
+    })
+
+    $("#searchPokemon").click(() => {
+        searchPokemon();
     })
 }
 

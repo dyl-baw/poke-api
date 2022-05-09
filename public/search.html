@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="search.js"></script>
+    <style>
+
+        body {
+            text-align: center;
+            background-color: #eee;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .card{
+            text-align: center;
+            margin: 10px;
+            border-radius: 40px;
+            background-color: rgb(134, 131, 131);
+        }
+    </style>
     <title>Search</title>
 </head>
-<body>
 
+<body>
+    <header>
+        <h1>Search for a Pokemon!</h1>
+    </header>
+    <label>Choose a Pokemon Type</label>
     <select name="pokemon_type" id="pokemon_type">
         <option value="grass">grass</option>
         <option value="fire">fire</option>
@@ -29,10 +52,10 @@
         <option value="ghost">ghost</option>
         <option value="dark">dark</option>
     </select>
-    
+
 
     <div class="region-selection">
-        <label for="type">Choose A Region</label>
+        <label for="type">Choose a Region</label>
         <select name="region" id="region">
             <option value="kanto">Kanto (1 - 151)</option>
             <option value="johto">Johto (152 - 251)</option>
@@ -44,9 +67,20 @@
             <option value="galar">Galar (810 - 898)</option>
         </select>
     </div>
+
+    <div class="searchName">
+        <label> Search for a Pokemon </label>
+        <input type="text" id="pokemonName" placeholder="Enter Pokemon Name or ID">
+        <input type="submit" value="search" id="searchPokemon">
+    </div>
+
+    <div id="history">
+
+    </div>
     <main>
 
-        
+
     </main>
 </body>
+
 </html>
