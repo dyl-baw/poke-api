@@ -24,11 +24,13 @@ function processPokeResp(pokemon) {
     const pokemon_types = pokemon.types.map(type => type.type.name);
     const type = main_types.find(type => pokemon_types.indexOf(type) > -1);
     const colour = cardColors[type];
-    add_poke += `<div class="pokemon_container"><a href="/profile/${pokemon.id}"><img src="${pokemon.sprites.other["official-artwork"].front_default}"> <div> </a>${upperCaseName} </div> </div>`
-    $(".pokemon_container").css("background-color", colour);
     console.log(colour);
+    add_poke += `<div class="pokemon_container"><a href="/profile/${pokemon.id}"><img src="${pokemon.sprites.other["official-artwork"].front_default}"> <div> </a>${upperCaseName} </div> </div>`
+    $("#pokemon_container").css("background-color", colour);
     // pokemon_container.style.backgroundColor = color;
 }
+
+
 
 async function ninePokemons() {
     for (i = 1; i <= 9; i++) {

@@ -51,6 +51,7 @@
             color: #333;
         }
 
+
         .pokemon_container {
             text-align: center;
             background-color: #eee;
@@ -71,7 +72,7 @@
         }
 
         @media screen and (max-width: 750px) {
-            main, nav, #dummy_div{
+            main, nav {
                 display: flex;
                 flex-direction: column;
             }

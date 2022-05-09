@@ -2,7 +2,11 @@ type_g = "";
 storage = "";
 
 function processPokemonResp2(data) {
-    $("main").append(`<div class="card"><img src="${data.sprites.other["official-artwork"].front_default}"> ${data.name} </div>`)
+    $("main").append(`
+    <div class="card">
+    <a href="/profile/${data.id}">
+    <img src="${data.sprites.other["official-artwork"].front_default}"></a>
+    ${data.name}</div>`)
 }
 
 function processPokemonResp(data) {

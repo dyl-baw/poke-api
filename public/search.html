@@ -21,8 +21,18 @@
         .card{
             text-align: center;
             margin: 10px;
-            border-radius: 40px;
+            border-radius: 20px;
             background-color: rgb(134, 131, 131);
+        }
+
+        @media screen and (max-width: 750px) {
+            main, nav {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                /* align-items: center; */
+                text-align:left;
+            }
         }
     </style>
     <title>Search</title>
