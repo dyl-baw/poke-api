@@ -2,9 +2,14 @@ const express = require('express')
 const app = express()
 app.set('view engine', 'ejs');
 
-app.listen(8000, function (err) {
-    if (err) console.log(err);
-})
+// app.listen(8000, function (err) {
+//     if (err) console.log(err);
+// })
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
 
 app.get('/', function (req, res) {
     res.send(__dirname + '/main.html');
