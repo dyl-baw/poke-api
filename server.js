@@ -36,10 +36,53 @@ app.get('/profile/:id', function (req, res) {
                     return obj_2.base_stat
                 }
             )
+
+            atk  = pokemon.stats.filter( (obj) =>{
+                return obj.stat.name == "attack"
+            }).map(
+                (obj_2) =>{
+                    return obj_2.base_stat
+                }
+            )
+
+            dfsn = pokemon.stats.filter( (obj) =>{
+                return obj.stat.name == "defense"
+            }).map(
+                (obj_2) =>{
+                    return obj_2.base_stat
+                }
+            )
+
+            spclatk = pokemon.stats.filter( (obj) =>{
+                return obj.stat.name == "special-attack"
+            }).map(
+                (obj_2) =>{
+                    return obj_2.base_stat
+                }
+            )
+            spcldfsn = pokemon.stats.filter( (obj) =>{
+                return obj.stat.name == "special-defense"
+            }).map(
+                (obj_2) =>{
+                    return obj_2.base_stat
+                }
+            )
+            speed = pokemon.stats.filter( (obj) =>{
+                return obj.stat.name == "speed"
+            }).map(
+                (obj_2) =>{
+                    return obj_2.base_stat
+                }
+            )
             res.render("profile.ejs", {
                 "id": req.params.id,
                 "name": pokemon.name,
-                "hp": tmp[0]
+                "hp": tmp[0],
+                "attack": atk[0],
+                "defense": dfsn[0],
+                "specialatk": spclatk[0],
+                "defenseatk": spcldfsn[0],
+                "speed": speed[0]
             });
         })
     });

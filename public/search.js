@@ -1,22 +1,6 @@
 type_g = "";
 storage = "";
 
-const cardColors = {
-    fire: '#FDDFDF',
-    grass: '#DEFDE0',
-    electric: '#FCF7DE',
-    water: '#DEF3FD',
-    ground: '#F4e7da',
-    rock: 'd5d5d4',
-    fairy: '#fceaff',
-    poison: '#98d7a5',
-    bug: '#f8d5a3',
-    dragon: '#98b3e6',
-    psychic: '#eaeda1',
-    flying: 'F5F5F5',
-    fighting: '#E6E0D4',
-    normal: '#F5F5F5'
-};
 
 function processPokemonResp2(data) {
     $("main").append(`
@@ -37,7 +21,6 @@ function processPokemonResp(data) {
 
 function processPokeRegion(data) {
     storage = data.results;
-    console.log(data);
     for (i = 0; i < data.results.length; i++) {
         $("main").append(`
         <div class="card">
@@ -103,6 +86,14 @@ function displayRegion(start, end) {
     })
 }
 
+function nextPage(){
+
+}
+
+function previousPage(){
+
+}
+
 
 function setup() {
     // display grass pokemon
@@ -116,25 +107,25 @@ function setup() {
         pokeregion = $("#region option:selected").val();
         switch (pokeregion) {
             case 'kanto':
-                displayRegion(1, 151)
+                displayRegion(0, 151)
                 break;
             case 'johto':
-                displayRegion(152, 251)
+                displayRegion(151, 251)
                 break
             case 'hoenn':
-                displayRegion(252, 386)
+                displayRegion(251, 386)
                 break
             case 'sinnoh':
-                displayRegion(387, 494)
+                displayRegion(386, 494)
                 break
             case 'unova':
-                displayRegion(495, 649)
+                displayRegion(494, 649)
                 break
             case 'kalos':
-                displayRegion(650, 721)
+                displayRegion(649, 721)
                 break
             case 'alola':
-                displayRegion(722, 809)
+                displayRegion(721, 809)
                 break
             case 'galar':
                 displayRegion(810, 898)
