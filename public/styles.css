@@ -72,7 +72,7 @@
         }
 
         @media screen and (max-width: 750px) {
-            main, nav {
+            main {
                 display: flex;
                 flex-direction: column;
             }
@@ -80,6 +80,10 @@
 
         h1 {
             margin: 0px;
+        }
+
+        nav {
+            justify-content: center;
         }
 
         .pokemon_images {

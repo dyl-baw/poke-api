@@ -1,6 +1,23 @@
 type_g = "";
 storage = "";
 
+const cardColors = {
+    fire: '#FDDFDF',
+    grass: '#DEFDE0',
+    electric: '#FCF7DE',
+    water: '#DEF3FD',
+    ground: '#F4e7da',
+    rock: 'd5d5d4',
+    fairy: '#fceaff',
+    poison: '#98d7a5',
+    bug: '#f8d5a3',
+    dragon: '#98b3e6',
+    psychic: '#eaeda1',
+    flying: 'F5F5F5',
+    fighting: '#E6E0D4',
+    normal: '#F5F5F5'
+};
+
 function processPokemonResp2(data) {
     $("main").append(`
     <div class="card">
@@ -20,6 +37,7 @@ function processPokemonResp(data) {
 
 function processPokeRegion(data) {
     storage = data.results;
+    console.log(data);
     for (i = 0; i < data.results.length; i++) {
         $("main").append(`
         <div class="card">
