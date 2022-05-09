@@ -12,7 +12,7 @@ app.listen(PORT, () => {
 });
 
 app.get('/', function (req, res) {
-    res.send(__dirname + '/main.html');
+    res.sendFile(`${__dirname}/public/main.html`);
 })
 
 const https = require('https');
