@@ -1,6 +1,7 @@
 
         body {
             margin: 0px;
+            background-color: rgb(175, 174, 174);
         }
 
         nav {
@@ -47,7 +48,7 @@
         }
 
         nav a:hover {
-            background-color: f2f2f2;
+            background-color: #f2f2f2;
             color: #333;
         }
 
