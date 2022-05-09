@@ -6,9 +6,9 @@ app.listen(8000, function (err) {
     if (err) console.log(err);
 })
 
-// app.get('/', function (req, res) {
-//     res.send(__dirname + '/main.html');
-// })
+app.get('/', function (req, res) {
+    res.send(__dirname + '/main.html');
+})
 
 const https = require('https');
 
